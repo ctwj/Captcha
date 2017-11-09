@@ -18,3 +18,10 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
+// captcha
+$container['captcha'] = function ( $c ) {
+	$settings = $c->get('settings')['captcha'];
+	$captcha = new Ctwj\Captcha\Captcha($settings);
+	return $captcha;
+};
+

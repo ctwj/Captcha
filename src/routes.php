@@ -16,8 +16,8 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 });
 
 $app->get('/captcha/[{token}]', function(Request $request, Response $response, array $args){
-	$captcha = new Ctwj\Captcha\Captcha();
-	return $response->write('good');
+	$result = $this->captcha->hello();
+	return $response->write($result);
 });
 
 $app->get('/captcha/show/[{token}]', function(Request $request, Response $response, array $args){

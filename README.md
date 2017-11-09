@@ -1,26 +1,41 @@
-# Slim Framework 3 Skeleton Application
+# Simple Captcha Server 
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+This application base on Slim Framework 3 application.  It also uses the alost of thrid part project.
+
+- gregwar/captcha
+- dapphp/securimage
+- abeautifulsite/simple-php-captcha
+- kangkang66/captcha
+- lifei6671/php-captcha
+- firebase/php-jwt
 
 This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
 
-## Install the Application
+## Part One
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+This application can provider server for another application with json api.
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+1. api to get the captche url, and a token to valid captch or get captch code  
+ 	http://host/captcha/[{token}]  
+	<pre>
+	{
+		jwt:xxxxxxxxxxxx,
+		url:xxxxxxxxxxxx
+	}
+	</pre>
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+2. valid 
+	http://host/captcha/valid/[{code}]/[{jwt}]
+	<pre>
+	{
+		"valid":"pass"
+	}
+	</pre>
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can also run this command. 
-
-	php composer.phar start
-
-Run this command to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+3. get code
+	http://host/captcha/valid/[{code}]/[{jwt}]
+	<pre>
+	{
+		"code":"1234"
+	}
+	</pre>

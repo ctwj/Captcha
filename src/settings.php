@@ -18,5 +18,15 @@ return [
 
         // json web token
         'jwt_key'   => 'captcha_json_web_token_secrect_key',
+
+        // captcha config
+        'captcha' => [
+            'max-length' => 6,    //max captcha length
+            'min-length' => 4,    //min captcha length
+            'width'      => 160,
+            'heigth'     => 60,
+            'logic_type' => false,
+            'zh-cn'      => false,  //is include chinese captcha?
+        ],
     ],
 ];
