@@ -2,14 +2,18 @@
 
 namespace Ctwj\Captcha;
 
+
 class Captcha{
 
 	public $str = '';
 	public $config = [];
+	public $instance = null;
 
 	public function __construct($config)
 	{
 		$this->config = $config;
+		$factory = new Factory($config);
+		$this->instance = $factory->getInstance();
 	}
 
 	/**
@@ -31,7 +35,7 @@ class Captcha{
 	*/
 	public function save()
 	{
-
+		$this->instance->save();
 	}
 
 	/**
