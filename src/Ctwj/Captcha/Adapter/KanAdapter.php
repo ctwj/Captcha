@@ -3,7 +3,7 @@
 namespace Ctwj\Captcha\Adapter;
 
 use Ctwj\Captcha\CaptchaInterface;
-use Chinesecaptcha\Chinesecaptcha;
+use Chinesecaptcha;
 
 class KanAdapter implements CaptchaInterface {
 
@@ -11,7 +11,7 @@ class KanAdapter implements CaptchaInterface {
 
 	public function __construct()
 	{
-		$instance = new  Chinesecaptcha\Chinesecaptcha();
+		$this->instance = new  Chinesecaptcha\Chinesecaptcha();
 	}
 
 	/**
