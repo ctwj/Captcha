@@ -7,8 +7,12 @@ use Chinesecaptcha;
 
 class KanAdapter extends Chinesecaptcha\Chinesecaptcha implements CaptchaInterface {
 
-	private static $instance = null;
-	private static $config = null;
+	private $instance = null;
+
+	public function __construct()
+	{
+		$this->instance = new  Chinesecaptcha\Chinesecaptcha();
+	}
 
 	/**
 	*	是否需要自己生成字符串
