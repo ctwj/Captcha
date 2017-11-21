@@ -23,6 +23,7 @@ return [
         'captcha' => [
             'max-length' => 6,    //max captcha length
             'min-length' => 4,    //min captcha length
+            'length'     => rand(4,6),
             'width'      => 160,
             'heigth'     => 60,
             'logic_type' => false,

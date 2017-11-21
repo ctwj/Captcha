@@ -19,7 +19,7 @@ class Factory
 	public function getInstance()
 	{
 		if ( is_null(self::$adapter) ) {
-			self::$adapter = new KanAdapter();
+			self::$adapter = KanAdapter::getInstance($this->config);
 		}
 		return self::$adapter;
 	}

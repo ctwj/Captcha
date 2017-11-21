@@ -16,14 +16,6 @@ class Captcha{
 		$this->instance = $factory->getInstance();
 	}
 
-	/**
-	*	设置配置
-	*/
-	public function setConfig( $config )
-	{
-		$this->config  = $config;
-	}
-
 	public function hello()
 	{
 		echo 'good captcha';
