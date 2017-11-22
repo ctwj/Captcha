@@ -7,7 +7,8 @@ use Chinesecaptcha;
 
 class KanAdapter extends Chinesecaptcha\Chinesecaptcha implements CaptchaInterface {
 
-	private $instance = null;
+	private static $instance = null;
+	private static $config = [];
 
 	public function __construct()
 	{
@@ -18,6 +19,11 @@ class KanAdapter extends Chinesecaptcha\Chinesecaptcha implements CaptchaInterfa
 	*	是否需要自己生成字符串
 	*/
 	private static $createStrSelf = true; 	
+
+	public final static function setStr( $str )
+	{
+
+	}
 
 	public final static function getInstance($config)
 	{

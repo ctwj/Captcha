@@ -21,7 +21,9 @@
         "dapphp/securimage": "^3.6",
         "abeautifulsite/simple-php-captcha": "^1.0",
         "kangkang66/captcha": "^1.0",
-        "lifei6671/php-captcha": "^0.1.1"
+        "lifei6671/php-captcha": "^0.1.1",
+        "sebastian/version": "1.0.6",
+        "symfony/event-dispatcher": "v3.0.0"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.8 < 6.0"

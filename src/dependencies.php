@@ -18,10 +18,18 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
+$container['dispatcher'] = function ( $c ) {
+    $dispatcher = new Symfony\Component\EventDispatcher\EventDispatcher();
+    return $dispatcher;
+};
+
 // captcha
-$container['captcha'] = function ( $c ) {
+$container['captcha'] = function ( $c ) use ( $container ) {
 	$settings = $c->get('settings')['captcha'];
-	$captcha = new Ctwj\Captcha\Captcha($settings);
+    $dispatcher = $container->dispatcher;
+	$captcha = new Ctwj\Captcha\Captcha($settings, $dispatcher);
 	return $captcha;
 };
+
+
 

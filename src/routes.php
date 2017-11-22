@@ -16,6 +16,9 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 });
 
 $app->get('/captcha/[{token}]', function(Request $request, Response $response, array $args){
+	$this->dispatcher->addListener('captcha.hello', function(){
+			echo 'event';
+		});
 	$result = $this->captcha->hello();
 	return $response->write($result);
 });
